@@ -4,18 +4,28 @@
  */
 package br.com.mpss.SpringBoot3.entidades;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
+
 
 /**
  *
  * @author mpsss
  */
+
+@Entity
+@Table(name = "tb_user")
 public class Usuario implements Serializable{
     
     private static final long serialVersionUID = 1l;
-    
-    
+ 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
